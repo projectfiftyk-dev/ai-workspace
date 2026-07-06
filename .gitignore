@@ -1,0 +1,14 @@
+# backend (Maven/Java)
+backend/target/
+
+# frontend (Node/Vite)
+frontend/node_modules/
+frontend/dist/
+
+# ai-service (Python)
+ai-service/.venv/
+ai-service/__pycache__/
+
+# secrets
+.env
+backend/.env

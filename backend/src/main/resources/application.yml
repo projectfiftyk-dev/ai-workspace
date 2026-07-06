@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: backend
+  data:
+    mongodb:
+      uri: ${MONGO_URI}
+      auto-index-creation: true
+
+server:
+  port: 8080
+  error:
+    include-message: always
+
+app:
+  jwt:
+    secret: ${JWT_SECRET}
