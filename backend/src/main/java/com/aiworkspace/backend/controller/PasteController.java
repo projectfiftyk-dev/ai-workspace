@@ -31,6 +31,6 @@ public class PasteController {
         }
         var result = pasteIngestService.ingest(user.getOrgId(), request.text());
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(new PasteResponse(result.sourceId(), result.messageId()));
+                .body(new PasteResponse(result.sourceId(), result.messageId(), result.aiResult(), result.analysisError()));
     }
 }

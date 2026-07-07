@@ -70,6 +70,8 @@ The FastAPI service abstracts the LLM behind an `LLMProvider` interface (`analyz
 ### `ai_results` and `tasks`
 Unchanged in shape from v1 — they reference `sourceId` instead of `channelId`, but the structure (summary, action items, decisions, deadlines / status, assignee, source references) stays the same. This is the payoff of the abstraction: the AI pipeline and task system don't care where a message came from.
 
+**Action items are staged, not auto-created as Tasks.** Each entry in `ai_results.actionItems` gets a `confirmed: boolean` field (default `false`). Detected action items are surfaced to the user for review; a Task is only created in the `tasks` collection when the user explicitly confirms one. This keeps the app's automation honest — it detects and suggests, the user decides what actually becomes committed work. Confirming sets `confirmed: true` on that action item and creates a corresponding `Task` (status: `backlog`) referencing `sourceAiResultId` and the action item's index.
+
 ---
 
 ## 4. Revised 7–8 Week Plan

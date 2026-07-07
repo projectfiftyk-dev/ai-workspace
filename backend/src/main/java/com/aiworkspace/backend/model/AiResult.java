@@ -18,9 +18,11 @@ public class AiResult {
 
     private String summary;
 
-    private List<String> actionItems;
+    private List<ActionItem> actionItems;
 
     private List<String> decisions;
+
+    private List<String> deadlines;
 
     private Instant createdAt;
 
@@ -56,11 +58,11 @@ public class AiResult {
         this.summary = summary;
     }
 
-    public List<String> getActionItems() {
+    public List<ActionItem> getActionItems() {
         return actionItems;
     }
 
-    public void setActionItems(List<String> actionItems) {
+    public void setActionItems(List<ActionItem> actionItems) {
         this.actionItems = actionItems;
     }
 
@@ -70,6 +72,14 @@ public class AiResult {
 
     public void setDecisions(List<String> decisions) {
         this.decisions = decisions;
+    }
+
+    public List<String> getDeadlines() {
+        return deadlines;
+    }
+
+    public void setDeadlines(List<String> deadlines) {
+        this.deadlines = deadlines;
     }
 
     public Instant getCreatedAt() {

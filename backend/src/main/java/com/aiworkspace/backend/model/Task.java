@@ -15,6 +15,8 @@ public class Task {
 
     private String aiResultId;
 
+    private int actionItemIndex;
+
     private String title;
 
     private String description;
@@ -52,6 +54,14 @@ public class Task {
 
     public void setAiResultId(String aiResultId) {
         this.aiResultId = aiResultId;
+    }
+
+    public int getActionItemIndex() {
+        return actionItemIndex;
+    }
+
+    public void setActionItemIndex(int actionItemIndex) {
+        this.actionItemIndex = actionItemIndex;
     }
 
     public String getTitle() {
